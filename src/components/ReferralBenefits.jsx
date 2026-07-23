@@ -1,62 +1,70 @@
+const benefits = [
+  {
+    icon: "🎯",
+    title: "Tailored Learning",
+    description:
+      "Customized enterprise learning solutions designed around your business goals.",
+  },
+  {
+    icon: "👨‍🏫",
+    title: "Expert Mentors",
+    description:
+      "Learn directly from industry experts with real-world experience.",
+  },
+  {
+    icon: "📜",
+    title: "Certified Programs",
+    description:
+      "Globally recognized certifications that improve workforce capability.",
+  },
+  {
+    icon: "📈",
+    title: "Measurable Growth",
+    description:
+      "Track employee progress with detailed analytics and learning reports.",
+  },
+];
+
 export default function ReferralBenefits() {
-
-  const benefits = [
-    {
-      title: "Industry Experts",
-      description: "Learn from experienced mentors and industry leaders."
-    },
-    {
-      title: "Flexible Learning",
-      description: "Self-paced learning with live mentorship sessions."
-    },
-    {
-      title: "Recognized Certification",
-      description: "Earn certificates from top universities."
-    }
-  ];
-
   return (
-    <section className="bg-gray-50 py-20">
-
+    <section id="benefits" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-4xl font-bold text-center">
-          Why Choose Accredian?
-        </h2>
+        <div className="text-center">
+          <h2 className="text-5xl font-bold">
+            Enterprise Learning{" "}
+            <span className="text-blue-600">Benefits</span>
+          </h2>
 
-        <p className="text-center text-gray-600 mt-4">
-          Everything your organization needs for workforce upskilling.
-        </p>
+          <p className="mt-4 text-xl text-gray-600">
+            Everything your organization needs to build future-ready teams.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-14">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
 
           {benefits.map((item) => (
-
             <div
               key={item.title}
-              className="bg-white rounded-xl shadow p-8 hover:shadow-xl transition"
+              className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300"
             >
-
-              <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-2xl">
-                📘
+              <div className="text-5xl">
+                {item.icon}
               </div>
 
-              <h3 className="text-xl font-bold mt-6">
+              <h3 className="mt-6 text-2xl font-bold">
                 {item.title}
               </h3>
 
-              <p className="text-gray-600 mt-3">
+              <p className="mt-4 text-gray-600 leading-7">
                 {item.description}
               </p>
-
             </div>
-
           ))}
 
         </div>
 
       </div>
-
     </section>
   );
 }

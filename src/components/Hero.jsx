@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="bg-blue-50 py-20">
+    <section id="home" className="bg-white py-10 px-5">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
         {/* Left Side */}
@@ -38,11 +38,11 @@ export default function Hero() {
 
         <div className="flex justify-center">
 
-          <img
-            src="https://placehold.co/500x500/eaf2ff/2563eb?text=Enterprise+Learning"
-            alt="Enterprise"
-            className="rounded-2xl shadow-xl"
-          />
+         <img
+  src="/images/hero.jpg"
+  alt="Enterprise Learning"
+  className="w-full max-w-xl"
+/>
 
         </div>
 

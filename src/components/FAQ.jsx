@@ -2,54 +2,56 @@
 
 import { useState } from "react";
 
+const faqs = [
+  {
+    question: "Who can enroll?",
+    answer:
+      "Working professionals, graduates, and organizations looking to upskill their workforce can enroll.",
+  },
+  {
+    question: "Are certificates provided?",
+    answer:
+      "Yes. Learners receive industry-recognized certificates after successfully completing the program.",
+  },
+  {
+    question: "Do you provide corporate training?",
+    answer:
+      "Yes. We offer customized corporate learning solutions for organizations of all sizes.",
+  },
+];
+
 export default function FAQ() {
-  const faqs = [
-    {
-      question: "What is Accredian Enterprise?",
-      answer:
-        "It is a workforce upskilling platform for organizations."
-    },
-    {
-      question: "Who can enroll?",
-      answer:
-        "Companies looking to train and upskill their employees."
-    },
-    {
-      question: "Are certificates provided?",
-      answer:
-        "Yes, learners receive industry-recognized certificates."
-    }
-  ];
-
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const [open, setOpen] = useState(null);
 
   return (
-    <section className="py-20 bg-white">
+    <section id="faq" className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-6">
 
-        <h2 className="text-4xl font-bold text-center mb-10">
-          Frequently Asked Questions
+        <h2 className="text-5xl font-bold text-center">
+          Frequently Asked <span className="text-blue-600">Questions</span>
         </h2>
+
+        <p className="text-center text-gray-600 mt-4 mb-12">
+          Find answers to the most common questions.
+        </p>
 
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="border rounded-lg mb-4"
+            className="border rounded-xl mb-5 overflow-hidden"
           >
             <button
-              onClick={() => toggleFAQ(index)}
-              className="w-full text-left p-5 font-semibold flex justify-between"
+              onClick={() => setOpen(open === index ? null : index)}
+              className="w-full flex justify-between items-center p-6 font-semibold text-left"
             >
               {faq.question}
-              <span>{openIndex === index ? "-" : "+"}</span>
+              <span className="text-2xl">
+                {open === index ? "−" : "+"}
+              </span>
             </button>
 
-            {openIndex === index && (
-              <div className="p-5 border-t text-gray-600">
+            {open === index && (
+              <div className="px-6 pb-6 text-gray-600">
                 {faq.answer}
               </div>
             )}

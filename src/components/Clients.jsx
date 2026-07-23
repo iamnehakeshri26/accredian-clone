@@ -1,41 +1,56 @@
+const clients = [
+  { name: "Google", logo: "/logos/google.jpg" },
+  { name: "Amazon", logo: "/logos/amazon.jpg" },
+  { name: "Microsoft", logo: "/logos/microsoft.jpg" },
+  { name: "Infosys", logo: "/logos/infosys.jpg" },
+  { name: "TCS", logo: "/logos/tcs.jpg" },
+  { name: "Wipro", logo: "/logos/wipro.jpg" },
+];
+
 export default function Clients() {
-  const clients = [
-    "Google",
-    "Amazon",
-    "Microsoft",
-    "Infosys",
-    "TCS",
-    "Wipro",
-  ];
-
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6 text-center">
+    <section id="clients" className="py-20 bg-white">
 
-        <h2 className="text-4xl font-bold">
-          Trusted by Leading Companies
-        </h2>
+      <div className="max-w-7xl mx-auto px-6">
 
-        <p className="text-gray-600 mt-3">
-          We partner with top organizations to upskill their workforce.
-        </p>
+        <div className="text-center mb-14">
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12">
+          <h2 className="text-5xl font-bold">
+            Trusted by{" "}
+            <span className="text-blue-600">
+              Leading Companies
+            </span>
+          </h2>
+
+          <p className="mt-4 text-xl text-gray-600">
+            Helping enterprises build future-ready workforces.
+          </p>
+
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
 
           {clients.map((client) => (
+
             <div
-              key={client}
-              className="border rounded-xl p-8 shadow hover:shadow-lg transition"
+              key={client.name}
+              className="bg-white rounded-2xl border border-gray-200 p-8 flex justify-center items-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300"
             >
-              <h3 className="text-xl font-semibold">
-                {client}
-              </h3>
+
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="h-12 object-contain"
+              />
+
             </div>
+
           ))}
 
         </div>
 
       </div>
+
     </section>
   );
 }

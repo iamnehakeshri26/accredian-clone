@@ -1,18 +1,20 @@
 export default function ContactCTA() {
   return (
-    <section className="bg-blue-600 py-20 text-center text-white">
-      <div className="max-w-5xl mx-auto px-6">
+    <section
+      id="contact"
+      className="bg-blue-600 text-white py-20"
+    >
+      <div className="max-w-7xl mx-auto px-6 text-center">
 
-        <h2 className="text-4xl font-bold">
+        <h2 className="text-5xl font-bold">
           Ready to Upskill Your Workforce?
         </h2>
 
-        <p className="mt-4 text-lg">
-          Talk to our experts and discover the right learning solution for your
-          organization.
+        <p className="mt-6 text-xl text-blue-100">
+          Talk to our experts and discover the right learning solution for your organization.
         </p>
 
-        <button className="mt-8 bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100">
+        <button className="mt-10 bg-white text-blue-600 font-bold px-10 py-4 rounded-xl hover:bg-gray-100 transition">
           Contact Us
         </button>
 
